@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <path d="M0 0h600v400H0z" fill="#1E293B"/>
+    
+    <!-- Grid Lines -->
+    <g stroke="#334155" stroke-width="1">
+        <path d="M50 50h500M50 150h500M50 250h500M50 350h500"/>
+        <path d="M150 50v300M250 50v300M350 50v300M450 50v300"/>
+    </g>
+    
+    <!-- Performance Graph -->
+    <path d="M100 300c50-100 100-150 200-180s200-20 250-30" stroke="url(#graphGradient)" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Data Points -->
+    <g filter="url(#glow)">
+        <circle cx="100" cy="300" r="6" fill="#3B82F6"/>
+        <circle cx="200" cy="200" r="6" fill="#3B82F6"/>
+        <circle cx="300" cy="120" r="6" fill="#3B82F6"/>
+        <circle cx="400" cy="100" r="6" fill="#3B82F6"/>
+        <circle cx="500" cy="90" r="6" fill="#3B82F6"/>
+    </g>
+    
+    <!-- Floating Elements -->
+    <g filter="url(#glow)">
+        <circle cx="150" cy="250" r="20" fill="#2563EB" fill-opacity="0.2"/>
+        <circle cx="450" cy="150" r="20" fill="#60A5FA" fill-opacity="0.2"/>
+        <circle cx="300" cy="200" r="25" fill="#3B82F6" fill-opacity="0.2"/>
+    </g>
+    
+    <!-- Connecting Lines -->
+    <path d="M150 250l150-50M450 150l-150 50" stroke="url(#lineGradient)" stroke-width="2"/>
+    
+    <!-- Definitions -->
+    <defs>
+        <linearGradient id="graphGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3B82F6"/>
+            <stop offset="100%" stop-color="#60A5FA"/>
+        </linearGradient>
+        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.2"/>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+    </defs>
+</svg> 

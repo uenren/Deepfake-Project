@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepFake Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                DeepFakeDetect
+            </a>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#product">Product <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <h4>CORE</h4>
+                            <a href="#helios"><div class="dropdown-item"><div class="item-title">DeepFake Helios®</div><div class="item-description">Cloud detection-as-a-service</div></div></a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+                <span class="search-shortcut">Ctrl + K</span>
+            </button>
+            <a href="/login.html" class="login-button">
+                <span>Login</span>
+                <span class="shortcut">L</span>
+            </a>
+            <button class="start-free-button">Start Free Trial</button>
+        </div>
+    </nav>
+
+    <div id="searchModal" class="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search documentation...">
+                </div>
+                <button id="closeSearch" class="search-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Detect DeepFakes with Unmatched Accuracy</h1>
+            <p>Our AI-powered platform provides enterprise-grade deepfake detection.</p>
+            <div class="hero-buttons">
+                <a href="#detect" class="cta-button">Start Detection</a>
+                <a href="#docs" class="cta-button secondary">View Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="detect" class="detect">
+        <h2>Start Detecting Now</h2>
+        <div class="upload-container">
+            <div class="upload-options">
+                <div class="upload-area">
+                    <i class="fas fa-image"></i>
+                    <h3>Image Analysis</h3>
+                    <p>Upload images to detect manipulation.</p>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                    <button class="upload-button" onclick="document.getElementById('imageInput').click()">Upload Image</button>
+                </div>
+
+                <div class="upload-area">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Analysis</h3>
+                    <p>Process videos to identify deepfakes.</p>
+                    <input type="file" id="videoInput" accept="video/*" style="display: none;">
+                    <button class="upload-button" onclick="document.getElementById('videoInput').click()">Upload Video</button>
+                </div>
+            </div>
+
+            <div class="result-container" style="display: none;">
+                <h3>Analysis Results</h3>
+                <div class="result-item">
+                    <span>Manipulation Probability</span>
+                    <div class="progress-bar"><div class="progress" style="width: 0%"></div></div>
+                </div>
+                <div class="result-item">
+                    <span>Confidence Score</span>
+                    <div class="progress-bar"><div class="progress" style="width: 0%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
